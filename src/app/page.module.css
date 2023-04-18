@@ -1,10 +1,11 @@
 .background {
   font-family: Marker Felt, fantasy;
-  background: rgb(255, 255, 255);
- 
   height: 100vh;
-  padding: 6rem;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);}
 
 .titleDiv {
   display: flex;
@@ -13,33 +14,64 @@
 }
 
 .title {
-  font-family: Stencil , fantasy;
+  font-family: Stencil, fantasy;
   font-size: 72px;
-  background: #950fe2;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .boxContent {
   display: flex;
-  align-items: stretch;
-  flex-direction: row;
 }
 
 .content {
-  margin-left: 40px;
-  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 72px;
   background-color: #8686f0;
   border: 3px solid rgba(0, 0, 0, 0);
+  box-shadow: 10px 10px #5858e0;
   border-radius: 20px;
-  box-shadow: 10px 20px #5858e0;
   padding: 80px;
   height: 100px;
   width: 100px;
   list-style-type: none;
+  animation-duration: 3s;
+
 }
+
 .content:hover {
-  height: 150px;
-  width: 200px;
-  list-style-type: none;
+  font-size: 15px;
+  height: 200px;
+  width: 300px;
+  padding: 10px;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.55);
+  transition: all 0.3s ease;
+  box-shadow: 20px 20px #5858e0;
+}
+
+.boxContentIndividual {
+  width: 400px;
+}
+
+.button {
+  background-color: #8686f0;
+  color: #fff;
+  border-radius: 20px;
+
+}
+
+.button:hover {
+  background: #5858e0;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #eee;
+
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
