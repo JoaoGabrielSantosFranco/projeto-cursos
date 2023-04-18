@@ -1,5 +1,4 @@
 import { Component } from "./component"
-
 async function chamada() {
   const APIBase = 'http://localhost/crud-php/vagas/list.php'
   const response = await fetch(APIBase, { cache: 'no-cache' })

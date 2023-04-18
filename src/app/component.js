@@ -1,6 +1,7 @@
 "use client";
 import styles from './page.module.css'
 import { useState } from 'react';
+import { Button } from 'reactstrap';
 export function Component({ data }) {
 
     const [start, setStart] = useState(0);
@@ -40,12 +41,12 @@ export function Component({ data }) {
             <div>
 
                 <div className={styles.titleDiv}>
-                    <p className={styles.title}>CURSO DE PROGRAMAÇÃO</p>
+                    <p className={styles.title}>Cursos de Programação</p>
                 </div>
 
                 <div className={styles.boxContent}>
 
-                    <button onClick={handlePrevClick}>volta</button>
+                    <button  className="danger" onClick={handlePrevClick}>volta</button>
 
                     <ul className={styles.boxContent} >
                         {data.slice(start, end + 1).map((item) => ( //para cada item entre o start e end:
