@@ -17,18 +17,16 @@
 
 }
 
-
 .title {
   color: rgb(48, 48, 48);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 62px;
-
 }
 
 .boxContent {
-  border: 3px solid rgb(0, 0, 0);
-  box-shadow: 10px 20px grey;
-  padding: 5rem;
+  display: flex;
+  align-items: stretch;  
+  flex-direction:row;
 }
 
 .content {
@@ -37,7 +35,8 @@
   border: 3px solid rgb(0, 0, 0);
   border-radius: 20px;
   box-shadow: 10px 20px grey;
-  display: inline-table;
-  align-items: center;
-  padding: 6rem;
+  padding: 80px;
+  height: 200px;
+  width: 250px;
+  list-style-type: none;
 }
