@@ -83,7 +83,7 @@ export function Component({ data }) {
                     <button className={styles.button} onClick={handleNextClick}>{">"}</button>
                 </div>
                 <div className={styles.counter}>
-                    <p>{end - 1}/{tasks.length - 2}</p>
+                    <p>{end -1 }/{tasks.length - 2}</p>
                 </div>
             </div>
         </main>
