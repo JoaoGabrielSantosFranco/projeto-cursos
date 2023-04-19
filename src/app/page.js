@@ -10,6 +10,7 @@ export default async function Home() {
   const data = await chamada()
 
   return <Component data={data} /> 
+
 }
 
 
