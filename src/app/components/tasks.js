@@ -1,8 +1,8 @@
 "use client";
-import styles from './page.module.css'
+import styles from 'src/app/page.module.css'
 import { useState } from 'react';
 
-export function Tasks({data}) {
+export function Tasks({ data }) {
     const [start, setStart] = useState(0);
     const [end, setEnd] = useState(2);
     const [hoverId, setHoverId] = useState(null); // Estado para controlar o hover do mouse
@@ -35,9 +35,6 @@ export function Tasks({data}) {
     };
 
     const task_done = (a) => {
-        console.log(tasks)
-        console.log(tasks[0].id === a)
-
         setTasks(tasks.filter(tasks => tasks.id != a))
         handlePrevClick();
     };
@@ -50,9 +47,8 @@ export function Tasks({data}) {
 
                 <ul className={styles.boxContent} >
                     {tasks.slice(start, end + 1).map((item) => ( //para cada item entre o start e end:
-                        <div className={styles.boxContentIndividual}>
+                        <div key={item.id} className={styles.boxContentIndividual}>
                             <li className={styles.content}
-                                key={item.id}
                                 onMouseEnter={() => handleMouseEnter(item.id)}
                                 onMouseLeave={handleMouseLeave}>
 

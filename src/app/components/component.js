@@ -1,5 +1,6 @@
 "use client";
-import styles from './page.module.css'
+import styles from 'src/app/page.module.css'
+
 
 import { Tasks } from "./tasks"
 export function Component({data}) {
