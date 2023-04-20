@@ -5,7 +5,7 @@ import { Task } from './task.js';
 
 export function Tasks({ data }) {
     const [start, setStart] = useState(0);
-    const [end, setEnd] = useState(2);
+    const [end, setEnd] = useState(3);
     const [tasks, setTasks] = useState(data);
 
     const handlePrevClick = () => {
@@ -16,7 +16,7 @@ export function Tasks({ data }) {
     };
 
     const handleNextClick = () => {
-        if (end < tasks.length - 1) {
+        if (end < tasks.length ) {
             setStart(start + 1);
             setEnd(end + 1);
         }
@@ -26,6 +26,7 @@ export function Tasks({ data }) {
         setTasks(tasks.filter(tasks => tasks.id != a))
         handlePrevClick();
     };
+
     return (
         <main>
             <div className={styles.boxContent}>
@@ -33,19 +34,20 @@ export function Tasks({ data }) {
                 <button className={styles.button} onClick={handlePrevClick}>{"<"}</button>
 
                 <ul className={styles.boxContent} >
-                    {tasks.slice(start, end + 1).map((task) => ( //para cada item entre o start e end:
-                        <Task task={task} taskDone={taskDone} key={task.id} />
+                    {tasks.slice(start, end ).map((task) => ( //para cada item entre o start e end:
+                        <Task task={task} taskDone={taskDone} key={Math.random().toFixed(2) /* task.id */} />
                     ))}
-                    {tasks.length == 0 && (
+                    {tasks.length === 0 && (
                         <div>
                             <p>Voce não tem mais Tasks Por Hoje</p>
                         </div>
                     )}
                 </ul>
+
                 <button className={styles.button} onClick={handleNextClick}>{">"}</button>
             </div>
             <div className={styles.counter}>
-                <p>{end - 1}/{tasks.length - 2}</p>
+                <p>{start + 1}/{tasks.length - 2}</p>
             </div>
         </main>
     );

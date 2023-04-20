@@ -12,6 +12,8 @@ export function Task({ task, taskDone, }) {
         setHover(false);
     };
 
+    console.log(task.id)
+
     return (
         <div  className={styles.boxContentIndividual}>
             <li className={styles.content}
