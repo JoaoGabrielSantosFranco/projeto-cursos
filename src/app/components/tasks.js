@@ -6,6 +6,8 @@ import { Task } from './task.js';
 export function Tasks({ data }) {
     const [start, setStart] = useState(0);
     const [tasks, setTasks] = useState(data);
+    const [buttonClicked, setButtonClicked] = useState(false);
+
 
     const handlePrevClick = () => {
         if (start > 0) {
@@ -28,12 +30,16 @@ export function Tasks({ data }) {
         <main>
             <div className={styles.boxContent}>
 
-                <button className={styles.button} onClick={handlePrevClick}>{"<"}</button>
+                <button className={styles.button} onClick={() => {
+                    setButtonClicked(true);
+                    handlePrevClick();
+                    setTimeout(() => setButtonClicked(false), 500);
+                }}>{"<"}</button>
 
                 <ul className={styles.boxContent} >
                     {tasks.slice(start, start + 3).map((task) => (
 
-                        <Task task={task} taskDone={taskDone} key={`${task.id}-${start}`} />
+                        <Task task={task} taskDone={taskDone} key={`${task.id}-${start}`} buttonClicked={buttonClicked} />
 
                     ))}
                     {tasks.length === 0 && (
@@ -43,7 +49,11 @@ export function Tasks({ data }) {
                     )}
                 </ul>
 
-                <button className={styles.button} onClick={handleNextClick}>{">"}</button>
+                <button className={styles.button} onClick={() => {
+                    setButtonClicked(true);
+                    handleNextClick();
+                    setTimeout(() => setButtonClicked(false), 500);
+                }}>{">"}</button>
 
             </div>
             {tasks.length > 3 && (

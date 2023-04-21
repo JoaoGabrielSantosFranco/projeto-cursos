@@ -1,0 +1,10 @@
+html,
+body {
+
+  font-family: Marker Felt, fantasy;
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: #ff4700 */;
+}

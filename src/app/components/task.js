@@ -1,6 +1,6 @@
 import styles from 'src/app/page.module.css'
 import { useState } from 'react';
-export function Task({ task, taskDone, }) {
+export function Task({ task, taskDone,buttonClicked }) {
     const [hover, setHover] = useState(false);
 
     const handleMouseEnter = () => {
@@ -13,7 +13,8 @@ export function Task({ task, taskDone, }) {
 
     return (
         <div key={task.id} className={styles.boxContentIndividual}>
-            <li className={styles.content}
+            <li className={`${styles.content} ${buttonClicked && styles['button-clicked']}`}
+
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}>
                 {task.titulo}
@@ -28,3 +29,4 @@ export function Task({ task, taskDone, }) {
         </div>
     )
 }
+

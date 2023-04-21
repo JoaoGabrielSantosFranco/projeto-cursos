@@ -6,7 +6,7 @@ import { Tasks } from "./tasks"
 export function Component({data}) {
 
     return (
-        <main className={styles.background}>
+        <main>
             <div>
                 <div className={styles.titleDiv}>
                     <p className={styles.title}>Tasks</p>
