@@ -32,7 +32,9 @@ export function Tasks({ data }) {
 
                 <ul className={styles.boxContent} >
                     {tasks.slice(start, start + 3).map((task) => (
+
                         <Task task={task} taskDone={taskDone} key={`${task.id}-${start}`} />
+
                     ))}
                     {tasks.length === 0 && (
                         <div>
@@ -42,10 +44,14 @@ export function Tasks({ data }) {
                 </ul>
 
                 <button className={styles.button} onClick={handleNextClick}>{">"}</button>
+
             </div>
-            <div className={styles.counter}>
-                <p>{start + 1}/{tasks.length - 2}</p>
-            </div>
+            {tasks.length > 3 && (
+                <div className={styles.counter}>
+                    <p>{start + 1}/{tasks.length - 2}</p>
+                </div>
+            )}
+
         </main>
     );
 
