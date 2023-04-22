@@ -28,7 +28,8 @@ export function Tasks({ data }) {
 
     return (
         <main>
-            <div className={styles.boxContent}>
+            <div className={styles.box}>
+
 
                 <button className={styles.button} onClick={() => {
                     setButtonClicked(1);
@@ -36,15 +37,15 @@ export function Tasks({ data }) {
                     setTimeout(() => setButtonClicked(0), 500);
                 }}>{"<"}</button>
 
-                <ul className={styles.boxContent} >
+                <ul className={styles.box} >
                     {tasks.slice(start, start + 3).map((task) => (
 
                         <Task task={task} taskDone={taskDone} key={`${task.id}-${start}`} buttonClicked={buttonClicked} />
-
+                        
                     ))}
                     {tasks.length === 0 && (
                         <div>
-                            <p>Voce não tem mais Tasks Por Hoje</p>
+                            <p >Voce não tem mais Tasks Por Hoje</p>
                         </div>
                     )}
                 </ul>

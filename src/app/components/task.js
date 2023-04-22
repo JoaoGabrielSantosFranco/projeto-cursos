@@ -12,7 +12,7 @@ export function Task({ task, taskDone, buttonClicked }) {
     };
 
     return (
-        <div key={task.id} className={styles.boxContentIndividual}>
+        <div key={task.id} className={styles.boxContent}>
             <li className={`${styles.content} ${buttonClicked && styles['button-clicked']}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}>

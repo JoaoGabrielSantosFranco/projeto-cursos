@@ -6,10 +6,14 @@
   font-size: 72px;
 }
 
-.boxContent {
+
+.box{
   display: flex;
 }
 
+.boxContent {
+  width: 400px;
+}
 .content {
   font-size: 72px;
   background-color: #556B2F ;
@@ -33,9 +37,7 @@
   transition: all 0.3s ease;
 }
 
-.boxContentIndividual {
-  width: 400px;
-}
+
 
 .button {
   background-color: #556B2F ;
