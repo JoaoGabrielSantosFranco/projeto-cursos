@@ -1,6 +1,6 @@
 import styles from 'src/app/page.module.css'
 import { useState } from 'react';
-export function Task({ task, taskDone,buttonClicked }) {
+export function Task({ task, taskDone, buttonClicked }) {
     const [hover, setHover] = useState(false);
 
     const handleMouseEnter = () => {
@@ -14,7 +14,6 @@ export function Task({ task, taskDone,buttonClicked }) {
     return (
         <div key={task.id} className={styles.boxContentIndividual}>
             <li className={`${styles.content} ${buttonClicked && styles['button-clicked']}`}
-
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}>
                 {task.titulo}

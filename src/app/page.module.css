@@ -2,9 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.title {
   font-family: Stencil, fantasy;
   font-size: 72px;
 }
@@ -15,33 +12,25 @@
 
 .content {
   font-size: 72px;
-  background-color: #eead2d;
+  background-color: #556B2F ;
   border: 3px solid rgba(0, 0, 0, 0);
-  box-shadow: 10px 10px #603b00;
+  box-shadow: 10px 10px #000000;
   border-radius: 20px;
-  /* animation: moveToLeft 1.2s; */
   height: 200px;
   width: 300px;
   padding: 10px;
-  flex-direction: column;
-  align-items: center;
   overflow: hidden;
-}
-
-.animate {
-  /* animation: moveToLeft 1.2s; */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
 .content:hover {
   font-size: 15px;
-  height: 200px;
-  width: 300px;
-  padding: 10px;
   -webkit-transform: scale(1.5);
   -ms-transform: scale(1.5);
   transform: scale(1.55);
   transition: all 0.3s ease;
-  box-shadow: 20px 20px #603b00;
 }
 
 .boxContentIndividual {
@@ -49,7 +38,7 @@
 }
 
 .button {
-  background-color: #eead2d;
+  background-color: #556B2F ;
   color: #fff;
   border-radius: 20px;
 }
@@ -69,7 +58,6 @@
     transform: rotateY(360deg);
   }
 }
-
 
 .button-clicked {
   animation: moveToLeft 0.5s;

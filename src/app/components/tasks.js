@@ -6,7 +6,7 @@ import { Task } from './task.js';
 export function Tasks({ data }) {
     const [start, setStart] = useState(0);
     const [tasks, setTasks] = useState(data);
-    const [buttonClicked, setButtonClicked] = useState(false);
+    const [buttonClicked, setButtonClicked] = useState(0);
 
 
     const handlePrevClick = () => {
@@ -31,9 +31,9 @@ export function Tasks({ data }) {
             <div className={styles.boxContent}>
 
                 <button className={styles.button} onClick={() => {
-                    setButtonClicked(true);
+                    setButtonClicked(1);
                     handlePrevClick();
-                    setTimeout(() => setButtonClicked(false), 500);
+                    setTimeout(() => setButtonClicked(0), 500);
                 }}>{"<"}</button>
 
                 <ul className={styles.boxContent} >
@@ -50,9 +50,9 @@ export function Tasks({ data }) {
                 </ul>
 
                 <button className={styles.button} onClick={() => {
-                    setButtonClicked(true);
+                    setButtonClicked(2);
                     handleNextClick();
-                    setTimeout(() => setButtonClicked(false), 500);
+                    setTimeout(() => setButtonClicked(0), 500);
                 }}>{">"}</button>
 
             </div>
