@@ -19,7 +19,7 @@ export function Task({ task, taskDone, buttonClicked }) {
                 {task.titulo}
                 {hover && (
                     <div>
-                        <p>{task.id}</p>
+                        <p>Ativa :{task.ativo}</p>
                         <p>Descrição: {task.descricao}</p>
                         <button className={styles.button} onClick={() => taskDone(task.id)}>{"Feita"}</button>
                     </div>
