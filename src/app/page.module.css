@@ -8,10 +8,12 @@
 
 .box{
   display: flex;
+  padding: 0 2rem;
 }
 
 .boxContent {
   width: 400px;
+
 }
 .content {
   font-size: 72px;
@@ -62,4 +64,5 @@
 .button-clicked {
   animation: moveToLeft 0.5s;
 }
+
 

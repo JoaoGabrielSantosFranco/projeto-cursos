@@ -6,8 +6,9 @@ import { Tasks } from "./tasks"
 export function Component({ data }) {
 
     const [buttonClicked, setButtonClicked] = useState(true);
-    const data1 = data.filter(ativo => ativo.ativo == 'n');
-    const data2 = data.filter(ativo => ativo.ativo == 's');
+    const [tasks, setTasks] = useState(data);
+    // const data1 = data.filter(ativo => ativo.ativo == 'n');
+    // const data2 = data.filter(ativo => ativo.ativo == 's');
 
 
     function clicked() {
@@ -20,8 +21,6 @@ export function Component({ data }) {
         }
     }
 
-    
-
     return (
         <main>
             {buttonClicked && (
@@ -30,7 +29,7 @@ export function Component({ data }) {
                         <button className={styles.button} onClick={() => clicked()}>{'Feitas ->'}</button>
                         <p>Tasks</p>
                     </div>
-                    <Tasks data={data2} />
+                    <Tasks tasks={tasks} setTasks={setTasks} ativo='s' />
                 </div>
             )}
 
@@ -40,7 +39,7 @@ export function Component({ data }) {
                         <button className={styles.button} onClick={() => clicked()}>{'<- fazer'}</button>
                         <p>Tasks</p>
                     </div>
-                    <Tasks data={data1} />
+                    <Tasks tasks={tasks} setTasks={setTasks} ativo='n' />
                 </div>
             )}
         </main>

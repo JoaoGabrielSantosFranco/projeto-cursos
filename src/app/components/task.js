@@ -21,7 +21,7 @@ export function Task({ task, taskDone, buttonClicked }) {
                     <div>
                         <p>Ativa :{task.ativo}</p>
                         <p>Descrição: {task.descricao}</p>
-                        <button className={styles.button} onClick={() => taskDone(task)}>{"Feita"}</button>
+                        <button className={styles.button} onClick={() => taskDone(task)}>{task.ativo === 's' ? "Feita" : 'Não Feita'}</button>
                     </div>
                 )}
             </li>

@@ -3,11 +3,10 @@ import styles from 'src/app/page.module.css'
 import { useCallback, useState } from 'react';
 import { Task } from './task.js';
 
-export function Tasks({ data }) {
+export function Tasks({ tasks, setTasks, ativo }) {
     const [start, setStart] = useState(0);
-    const [tasks, setTasks] = useState(data);
     const [buttonClicked, setButtonClicked] = useState(0);
-
+    const localTasks = tasks.filter(task => task.ativo === ativo);
 
     const handlePrevClick = () => {
         if (start > 0) {
@@ -16,7 +15,7 @@ export function Tasks({ data }) {
     }
 
     const handleNextClick = () => {
-        if (start + 3 < tasks.length) {
+        if (start + 3 < localTasks.length) {
             setStart(start + 1);
         }
     }
@@ -24,8 +23,11 @@ export function Tasks({ data }) {
     const taskDone = (task) => {
 
         const data = {
+            titulo: task.titulo,
+            descricao: task.descricao,
+            data: task.data,
             id: task.id,
-            ativo: task.ativo === "s" ? 'n' : 's', 
+            ativo: task.ativo === "s" ? 'n' : 's',
         };
 
         fetch('http://localhost/crud-php/vagas/dataInput.php', {
@@ -51,7 +53,6 @@ export function Tasks({ data }) {
         <main>
             <div className={styles.box}>
 
-
                 <button className={styles.button} onClick={() => {
                     setButtonClicked(1);
                     handlePrevClick();
@@ -59,14 +60,14 @@ export function Tasks({ data }) {
                 }}>{"<"}</button>
 
                 <ul className={styles.box} >
-                    {tasks.slice(start, start + 3).map((task) => (
+                    {localTasks.slice(start, start + 3).map((task) => (
 
                         <Task task={task} taskDone={taskDone} key={`${task.id}-${start}`} buttonClicked={buttonClicked} />
 
                     ))}
-                    {tasks.length === 0 && (
+                    {localTasks.length === 0 && (
                         <div>
-                            <p >Voce não tem mais Tasks Por Hoje</p>
+                            <p> {ativo === 's' ? 'Voce não tem mais Tasks Por Hoje' : 'Nenhuma Task Feita'}</p>
                         </div>
                     )}
                 </ul>
@@ -78,9 +79,9 @@ export function Tasks({ data }) {
                 }}>{">"}</button>
 
             </div>
-            {tasks.length > 3 && (
+            {localTasks.length > 3 && (
                 <div className={styles.counter}>
-                    <p>{start + 1}/{tasks.length - 2}</p>
+                    <p>{start + 1}/{localTasks.length - 2}</p>
                 </div>
             )}
 
