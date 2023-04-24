@@ -10,13 +10,13 @@ export function Tasks({ tasks, setTasks, ativo }) {
 
     const handlePrevClick = () => {
         if (start > 0) {
-            setStart(start - 1);
+            setStart(start - 3);
         }
     }
 
     const handleNextClick = () => {
         if (start + 3 < localTasks.length) {
-            setStart(start + 1);
+            setStart(start + 3);
         }
     }
 
@@ -79,11 +79,9 @@ export function Tasks({ tasks, setTasks, ativo }) {
                 }}>{">"}</button>
 
             </div>
-            {localTasks.length > 3 && (
-                <div className={styles.counter}>
-                    <p>{start + 1}/{localTasks.length - 2}</p>
-                </div>
-            )}
+            <div className={styles.counter}>
+                <p>{Math.round((start + 2) / 3)}/{Math.round((localTasks.length) / 3)}</p>
+            </div>
 
         </main>
     );

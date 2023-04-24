@@ -21,28 +21,40 @@ export function Component({ data }) {
         }
     }
 
+
+
     return (
         <main>
             {buttonClicked && (
                 <div>
                     <div className={styles.titleDiv}>
-                        <button className={styles.button} onClick={() => clicked()}>{'Feitas ->'}</button>
+                        <div className={styles.box}>
+                            <button className={styles.buttonThisPage} >{'Fazer'}</button>
+                            <button className={styles.buttonNotThisPage} onClick={() => setButtonClicked(false)}>{'Feitas'}</button>
+                        </div>
+
                         <p>Tasks</p>
                     </div>
                     <Tasks tasks={tasks} setTasks={setTasks} ativo='s' />
                 </div>
-            )}
+            )
+            }
 
-            {!buttonClicked && (
-                <div>
-                    <div className={styles.titleDiv}>
-                        <button className={styles.button} onClick={() => clicked()}>{'<- fazer'}</button>
-                        <p>Tasks</p>
+            {
+                !buttonClicked && (
+                    <div>
+                        <div className={styles.titleDiv}>
+                            <div className={styles.box}>
+                                <button className={styles.buttonNotThisPage} onClick={() => setButtonClicked(true)}>{'Fazer'}</button>
+                                <button className={styles.buttonThisPage}>{'Feitas'}</button>
+                            </div>
+                            <p>Tasks</p>
+                        </div>
+                        <Tasks tasks={tasks} setTasks={setTasks} ativo='n' />
                     </div>
-                    <Tasks tasks={tasks} setTasks={setTasks} ativo='n' />
-                </div>
-            )}
-        </main>
+                )
+            }
+        </main >
     )
 }
 

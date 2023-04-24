@@ -6,7 +6,7 @@
   font-size: 72px;
 }
 
-.box{
+.box {
   display: flex;
   padding: 0 2rem;
 }
@@ -15,9 +15,10 @@
   width: 400px;
 
 }
+
 .content {
   font-size: 72px;
-  background-color: #556B2F ;
+  background-color: #556B2F;
   border: 3px solid rgba(0, 0, 0, 0);
   box-shadow: 10px 10px #000000;
   border-radius: 20px;
@@ -27,7 +28,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 
 .content:hover {
@@ -40,7 +41,7 @@
 
 
 .button {
-  background-color: #556B2F ;
+  background-color: #556B2F;
   color: #fff;
   border-radius: 15px;
 }
@@ -66,3 +67,22 @@
 }
 
 
+.buttonNotThisPage {
+  background-color: #556B2F;
+  color: #ffffff;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.buttonNotThisPage:hover {
+
+  box-shadow: 5px 5px 5px #603b00;
+
+}
+
+.buttonThisPage {
+  background-color: #c1c2c0;
+  color: #fff;
+  border-radius: 15px;
+  font-size: 20px;
+}
