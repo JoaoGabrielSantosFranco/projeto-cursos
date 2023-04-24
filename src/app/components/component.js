@@ -6,8 +6,9 @@ import { Tasks } from "./tasks"
 export function Component({ data }) {
 
     const [buttonClicked, setButtonClicked] = useState(true);
-    const [data1] = useState(data.filter(ativo => ativo.ativo == 'n'));
-    const [data2] = useState(data.filter(ativo => ativo.ativo == 's'));
+    const data1 = data.filter(ativo => ativo.ativo == 'n');
+    const data2 = data.filter(ativo => ativo.ativo == 's');
+
 
     function clicked() {
         if (buttonClicked == true) {
@@ -18,6 +19,8 @@ export function Component({ data }) {
             setButtonClicked(true);
         }
     }
+
+    
 
     return (
         <main>

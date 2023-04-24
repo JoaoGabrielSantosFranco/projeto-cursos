@@ -6,7 +6,6 @@
   font-size: 72px;
 }
 
-
 .box{
   display: flex;
 }
@@ -38,12 +37,10 @@
 }
 
 
-
 .button {
   background-color: #556B2F ;
   color: #fff;
-  border-radius: 20px;
-  font-size: 20px;
+  border-radius: 15px;
 }
 
 .button:hover {

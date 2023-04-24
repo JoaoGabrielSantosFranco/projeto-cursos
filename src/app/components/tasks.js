@@ -21,8 +21,29 @@ export function Tasks({ data }) {
         }
     }
 
-    const taskDone = (a) => {
-        setTasks(tasks.filter(tasks => tasks.id != a))
+    const taskDone = (task) => {
+
+        const data = {
+            id: task.id,
+            ativo: task.ativo === "s" ? 'n' : 's', 
+        };
+
+        fetch('http://localhost/crud-php/vagas/dataInput.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(async response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao atualizar os dados no servidor');
+                }
+                console.log(await response.text());
+            })
+
+        const newTasks = [...tasks.filter(tasks => tasks.id != task.id), data]
+        setTasks(newTasks)
         handlePrevClick();
     }
 
@@ -41,7 +62,7 @@ export function Tasks({ data }) {
                     {tasks.slice(start, start + 3).map((task) => (
 
                         <Task task={task} taskDone={taskDone} key={`${task.id}-${start}`} buttonClicked={buttonClicked} />
-                        
+
                     ))}
                     {tasks.length === 0 && (
                         <div>
