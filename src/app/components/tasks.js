@@ -50,20 +50,23 @@ export function Tasks({ tasks, setTasks, ativo }) {
         handlePrevClick();
     }
 
-    console.log(localTasks.length % 3)
-    console.log((localTasks.length / 3))
-    console.log(Math.round(localTasks.length / 3) - localTasks.length % 3)
     return (
         <main>
             <div className={styles.box}>
 
-                <button className={styles.button} onClick={() => {
-                    setButtonClicked(1);
-                    handlePrevClick();
-                    setTimeout(() => setButtonClicked(0), 500);
-                }}>{"<"}</button>
+                {
+                    localTasks.length ?
+                        (
+                            <button style={{ backgroundColor: ativo === 's' ? '#556B2F' : '#495057' }} className={styles.button} onClick={() => {
+                                setButtonClicked(1);
+                                handlePrevClick();
+                                setTimeout(() => setButtonClicked(0), 500);
+                            }}>{"<"}</button>
+                        ) : null
+                }
 
-                <ul className={styles.box} >
+
+                <div className={styles.box} >
                     {localTasks.slice(start, start + 3).map((task) => (
 
                         <Task task={task} taskDone={taskDone} key={`${task.id}-${start}`} buttonClicked={buttonClicked} />
@@ -71,16 +74,22 @@ export function Tasks({ tasks, setTasks, ativo }) {
                     ))}
                     {localTasks.length === 0 && (
                         <div>
-                            <p> {ativo === 's' ? 'Voce não tem mais Tasks Por Hoje' : 'Nenhuma Task Feita'}</p>
+                            <p > {ativo === 's' ? 'Voce não tem mais Tasks Por Hoje' : 'Nenhuma Task Feita'}</p>
                         </div>
                     )}
-                </ul>
+                </div>
 
-                <button className={styles.button} onClick={() => {
-                    setButtonClicked(2);
-                    handleNextClick();
-                    setTimeout(() => setButtonClicked(0), 500);
-                }}>{">"}</button>
+                {
+                    localTasks.length ?
+                        (
+                            <button style={{ backgroundColor: ativo === 's' ? '#556B2F' : '#495057' }} className={styles.button} onClick={() => {
+                                setButtonClicked(2);
+                                handleNextClick();
+                                setTimeout(() => setButtonClicked(0), 500);
+                            }}>{">"}</button>
+                        ) : null
+                }
+
 
             </div>
             {localTasks.length > 0 &&

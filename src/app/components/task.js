@@ -13,19 +13,19 @@ export function Task({ task, taskDone, buttonClicked }) {
 
     return (
         <div key={task.id} className={styles.boxContent}>
-            <li className={`${styles.content} ${buttonClicked && styles['button-clicked']}`}
+            <div style={{ backgroundColor: task.ativo === 's' ? '#556B2F' : '#495057' }} className={`${styles.content} ${buttonClicked && styles['button-clicked']}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}>
                 {task.titulo}
                 {hover && (
-                    <div>
+                    <div >
                         <p>Ativa :{task.ativo}</p>
                         <p>Descrição: {task.descricao}</p>
-                        <button className={styles.button} onClick={() => taskDone(task)}>{task.ativo === 's' ? "Feita" : 'Não Feita'}</button>
+                        <button style={{ backgroundColor: task.ativo === 's' ? '#556B2F' : '#495057' }} className={styles.button} onClick={() => taskDone(task)}>{task.ativo === 's' ? "Feita" : 'Não Feita'}</button>
                     </div>
                 )}
-            </li>
-        </div>
+            </div>
+        </div >
     )
 }
 

@@ -8,19 +8,18 @@
 
 .box {
   display: flex;
-  padding: 0 2rem;
 }
 
 .boxContent {
   width: 400px;
-
+  display: flex;
+  justify-content: center;
 }
 
 .content {
   font-size: 72px;
-  background-color: #556B2F;
-  border: 3px solid rgba(0, 0, 0, 0);
-  box-shadow: 10px 10px #000000;
+  background-color: #9bb4affb;
+  box-shadow: 10px 10px 5px #0000009C;
   border-radius: 20px;
   height: 200px;
   width: 300px;
@@ -31,12 +30,31 @@
   align-items: center;
 }
 
+.content>div {
+  opacity: 0;
+  transition: all 0.4s ease;
+  animation: opacity 1s;
+}
+
 .content:hover {
   font-size: 15px;
-  -webkit-transform: scale(1.5);
-  -ms-transform: scale(1.5);
   transform: scale(1.55);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.content:hover>div {
+  opacity: 1;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 
@@ -47,7 +65,7 @@
 }
 
 .button:hover {
-  box-shadow: 5px 5px 5px #603b00;
+  box-shadow: 5px 5px 5px #070505b2;
 }
 
 .counter {
@@ -66,23 +84,17 @@
   animation: moveToLeft 0.5s;
 }
 
-
-.buttonNotThisPage {
-  background-color: #556B2F;
-  color: #ffffff;
-  border-radius: 30px;
-  font-size: 20px;
+.switchContainer {
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+  font-size: 2rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.buttonNotThisPage:hover {
-
-  box-shadow: 5px 5px 5px #603b00;
-
-}
-
-.buttonThisPage {
-  background-color: #c1c2c0;
-  color: #fff;
-  border-radius: 15px;
-  font-size: 20px;
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
