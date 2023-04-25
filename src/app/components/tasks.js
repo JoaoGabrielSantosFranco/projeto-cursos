@@ -18,6 +18,7 @@ export function Tasks({ tasks, setTasks, ativo }) {
         if (start + 3 < localTasks.length) {
             setStart(start + 3);
         }
+
     }
 
     const taskDone = (task) => {
@@ -49,6 +50,9 @@ export function Tasks({ tasks, setTasks, ativo }) {
         handlePrevClick();
     }
 
+    console.log(localTasks.length % 3)
+    console.log((localTasks.length / 3))
+    console.log(Math.round(localTasks.length / 3) - localTasks.length % 3)
     return (
         <main>
             <div className={styles.box}>
@@ -79,10 +83,11 @@ export function Tasks({ tasks, setTasks, ativo }) {
                 }}>{">"}</button>
 
             </div>
-            <div className={styles.counter}>
-                <p>{Math.round((start + 2) / 3)}/{Math.round((localTasks.length) / 3)}</p>
-            </div>
-
+            {localTasks.length > 0 &&
+                <div className={styles.counter}>
+                    <p>{(start / 3) + 1}/{Math.ceil(localTasks.length / 3)}</p>
+                </div>
+            }
         </main>
     );
 
