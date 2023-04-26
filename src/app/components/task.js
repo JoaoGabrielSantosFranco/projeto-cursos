@@ -19,9 +19,10 @@ export function Task({ task, taskDone, buttonClicked }) {
                 {task.titulo}
                 {hover && (
                     <div >
-                        <p>Ativa :{task.ativo}</p>
+                        <p>id :{task.id}</p>
                         <p>Descrição: {task.descricao}</p>
-                        <button style={{ backgroundColor: task.ativo === 's' ? '#556B2F' : '#495057' }} className={styles.button} onClick={() => taskDone(task)}>{task.ativo === 's' ? "Feita" : 'Não Feita'}</button>
+                        <button style={{ backgroundColor: task.ativo === 's' ? '#556B2F' : '#495057' }} 
+                        className={styles.button} onClick={() => taskDone(task)}>{task.ativo === 's' ? "Feita" : 'Não Feita'}</button>
                     </div>
                 )}
             </div>
