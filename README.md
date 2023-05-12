@@ -1,9 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React Task List Project
+This is a React project that allows management of a task list. It uses CRUD concepts (Create, Read, Update, Delete) to allow, reading of existing tasks, and updating the status of tasks.
 
-## Getting Started
+## Installation
+To install the project, simply clone the repository and install the dependencies:
 
-First, run the development server:
+git clone https://github.com/JoaoGabrielSantosFranco/projeto-cursos
 
+## Usage
+To start the development server, use the command:
+cd your-project
 ```bash
 npm run dev
 # or
@@ -11,26 +16,17 @@ yarn dev
 # or
 pnpm dev
 ```
+the server will be available at http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Images
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+image of the undone tasks area
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.js`.
+![image](https://github.com/JoaoGabrielSantosFranco/projeto-cursos/assets/80074087/389671e8-dc03-4cdd-94ed-0bc18b80f316)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+image of the completed tasks area:
 
-## Learn More
+![image](https://github.com/JoaoGabrielSantosFranco/projeto-cursos/assets/80074087/4da2af3e-3ef3-42d6-8901-b0dc9ccbca3a)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+mouse over image to see task data:
+![image](https://github.com/JoaoGabrielSantosFranco/projeto-cursos/assets/80074087/f351a286-844e-4f24-be02-c1623dc3aed7)
